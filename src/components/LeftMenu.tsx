@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeIcon, FolderIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, FolderIcon, Cog6ToothIcon, NewspaperIcon } from '@heroicons/react/24/outline';
 
 interface LeftMenuProps {
   isExpanded: boolean;
@@ -20,7 +20,13 @@ const LeftMenu: React.FC<LeftMenuProps> = ({ isExpanded, onToggle }) => {
       }`}
     >
       <div className="flex flex-col h-full">
-        <div className="p-4 border-b border-dark-border">
+        <div className="p-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <NewspaperIcon className="w-6 h-6 text-accent" />
+            {isExpanded && (
+              <span className="ml-3 font-semibold text-dark-text">srcfollowr</span>
+            )}
+          </div>
           <button
             onClick={onToggle}
             className="text-dark-text-secondary hover:text-dark-text transition-colors"
